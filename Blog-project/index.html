@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mindful Blog | Home</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <h1>Mindful<span>Blog</span></h1>
+          </div>
+          <nav class="nav">
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+            <ul class="nav-links">
+              <li><a href="index.html" class="active">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="search-container">
+          <input type="text" id="search-input" placeholder="Search blog posts...">
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h2>Welcome to Mindful Blog</h2>
+          <p>Explore our collection of thoughtful articles on various topics.</p>
+        </div>
+      </section>
+
+      <section class="blog-posts">
+        <div class="container">
+          <h2 class="section-title">Latest Posts</h2>
+          <div class="posts-grid" id="posts-container">
+            <!-- Blog posts will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 MindfulBlog. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Template for blog post -->
+    <template id="post-template">
+      <article class="post-card">
+        <div class="post-image">
+          <img src="" alt="">
+        </div>
+        <div class="post-content">
+          <div class="post-tags"></div>
+          <h3 class="post-title"></h3>
+          <div class="post-meta">
+            <span class="post-date"></span>
+          </div>
+          <div class="post-excerpt"></div>
+          <a href="#" class="read-more">Read More</a>
+        </div>
+      </article>
+    </template>
+
+    <!-- Template for post modal -->
+    <template id="post-modal-template">
+      <div class="modal-overlay">
+        <div class="modal-content">
+          <button class="modal-close">&times;</button>
+          <div class="modal-body">
+            <article class="full-post">
+              <h2 class="post-title"></h2>
+              <div class="post-meta">
+                <span class="post-date"></span>
+                <div class="post-tags"></div>
+              </div>
+              <div class="post-image">
+                <img src="" alt="">
+              </div>
+              <div class="post-body"></div>
+              
+              <section class="comments-section">
+                <h3>Comments</h3>
+                <div class="comments-container"></div>
+                
+                <form class="comment-form">
+                  <div class="form-group">
+                    <label for="commenter-name">Name</label>
+                    <input type="text" id="commenter-name" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="comment-text">Comment</label>
+                    <textarea id="comment-text" required></textarea>
+                  </div>
+                  <button type="submit" class="btn">Submit Comment</button>
+                </form>
+              </section>
+            </article>
+          </div>
+        </div>
+      </div>
+    </template>
+
+    <!-- Template for comment -->
+    <template id="comment-template">
+      <div class="comment">
+        <div class="comment-header">
+          <span class="commenter-name"></span>
+          <span class="comment-date"></span>
+        </div>
+        <div class="comment-body"></div>
+      </div>
+    </template>
+
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>
